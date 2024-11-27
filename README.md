@@ -1,24 +1,14 @@
-# price_forecasting
+## What are these codes?
+This is the offical implementation of the published paper. Please cite this work:  
 
-This is the offical implementation of the published paper. Please cite this work:
 
-D. Kodaira, K. Tsukazaki, T. Kure, and J. Kondoh, "Improving Forecast Reliability for Geographically Distributed Photovoltaic Generations, " Energies, vol. 14, no. 21, p. 7340, Nov. 2021.
+### Abstract
+In this study, a probabilistic electricity price forecasting scheme is proposed for the volatile UK market. The proposed scheme utilizes Quantile Regression (QR) with general predictors and excludes market-specific variables to ensure adaptability. When forecasting day-ahead electricity prices, the scheme employs a set of quantile models that integrate lagged price data, demand forecasts, and renewable energy generation forecasts (solar and wind) to train the regression models. Additionally, the proposed approach incorporates real-time data retrieval via an API to enable automated day-ahead forecasting, ensuring accuracy and operational efficiency.
 
-Abstract
-In this study, a two-step probabilistic forecast scheme is proposed for geographically distributed PV generation forecasting. Each step of the proposed scheme adopts ensemble forecasting based on three different machine-learning methods. When individual PV generation is forecasted, the proposed scheme utilizes surrounding PVs' past data to train the ensemble forecasting model.
 
-Required packages
-Matlab 2019
+## About the author
+- [Yuki Osone], s2420851@u.tsukuba.ac.jp
 
-About the author
-Daisuke Kodaira, daisuke.kodaira03 AT gmail.com
-Structure of the code
-image
-The proposed model is composed of two part; Singple PV foreacst model and Multiple PV foreacst model as shown above. Codes for the Single PV foreacaset model is Forecast_BasedOnSiglePVData.Codes for the Multiple PV foreacaset model is Forecast_BasedOnMultiplePVData. These codes work indivudually. The Single PV foreacst generate csv files which contains forecasted results. These csv files are utilized for Multiple OV foreacst model.
-
-How to run
-1. Singole PV foreacaset model
-Run from "main.m".
-
-2. Multiple PV foreacaset model
-Run from "main.m".
+## Structure of the code
+![image](https://github.com/user-attachments/assets/d46b175b-3ffc-4197-94f6-f7e72b5fdd63)
+The proposed model consists of multiple code files. By running api_DAP.py and api_SSP.py first, followed by predict_price.py, it is possible to perform real-time predictions while retrieving data via the APIs.
